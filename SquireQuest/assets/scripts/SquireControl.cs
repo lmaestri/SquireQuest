@@ -4,14 +4,14 @@ using System.Text.RegularExpressions;
 
 public class SquireControl : MonoBehaviour {
 
-	float maxSpeed = 10.0f;
-
+	public float maxSpeed = 10.0f;
+	public float jumpSpeed = 3000.0f;
 
 	bool facingRight = true;
 
 	bool grounded = true;
 
-	float jumpSpeed = 3000.0f;
+
 
 	public GameObject bridge;
 
