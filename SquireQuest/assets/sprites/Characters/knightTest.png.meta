@@ -1,0 +1,85 @@
+fileFormatVersion: 2
+guid: 80bca4bb94d5b8d449a0f50480e48066
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: knightTest_0
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1848
+        width: 538
+        height: 1308
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: knightTest_1
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 861
+        width: 1594
+        height: 928
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: knightTest_2
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 426
+        width: 216
+        height: 439
+      alignment: 9
+      pivot: {x: .378922909, y: .565530777}
+    - name: knightTest_3
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 78
+        width: 282
+        height: 439
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 
