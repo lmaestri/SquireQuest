@@ -49,11 +49,15 @@ public class SquireControl : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
+
 		string input = collision.collider.name;
 		Match match1 = Regex.Match(input,"Dirt*");
-		Match match2 = Regex.Match(input,"Stone*");
+
+
+		string tag = collision.collider.tag;
+
 		//if(collision.collider.transform.parent.name.Equals("Level");
-		if(!grounded && match1.Success){
+		if(!grounded && tag.Equals("Ground")){
 			grounded = true;
 		}
 
@@ -61,11 +65,17 @@ public class SquireControl : MonoBehaviour {
 			Instantiate(bridge, new Vector3(51.0f, 4.0f, 0.0f), new Quaternion());
 		}
 
-		if( match2.Success){
-			Destroy(GameObject.Find("ObstacleRock01"));
+
+
+
+
+	}
+
+	void OnCollisionStay2D(Collision2D collision){
+		string input = collision.collider.name;
+		Match match2 = Regex.Match(input,"Stone*");
+		if( match2.Success && Input.GetKeyDown("space")){
+			Destroy(collision.gameObject);
 		}
-
-
-
 	}
 }
