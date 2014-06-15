@@ -4,6 +4,9 @@ using System.Text.RegularExpressions;
 
 public class SquireControl : MonoBehaviour {
 
+	public Camera squireCam;
+	public Camera knightCam;
+
 	public float maxSpeed = 10.0f;
 	public float jumpSpeed = 3000.0f;
 
@@ -21,7 +24,7 @@ public class SquireControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 
 		float move = Input.GetAxis ("Horizontal");
 
@@ -36,6 +39,14 @@ public class SquireControl : MonoBehaviour {
 		if( jump > 0 && grounded){
 			rigidbody2D.AddForce( transform.up * jumpSpeed );
 			grounded = false;
+		}
+		if( Input.GetKeyDown (KeyCode.LeftShift)){
+			squireCam.enabled = false;
+			knightCam.enabled = true;
+		}
+		if ( Input.GetKeyUp (KeyCode.LeftShift)){
+			squireCam.enabled = true;
+			knightCam.enabled = false;	
 		}
 
 	}
