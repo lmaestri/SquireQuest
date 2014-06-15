@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="assets\scripts\KnightIcon.cs" />
      <Compile Include="assets\scripts\SirKnight_KI.cs" />
      <Compile Include="assets\scripts\SquireControl.cs" />
   </ItemGroup>
