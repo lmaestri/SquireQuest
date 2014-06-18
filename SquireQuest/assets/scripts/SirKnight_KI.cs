@@ -4,6 +4,7 @@ using System.Collections;
 public class SirKnight_KI : MonoBehaviour {
 
 	public float speed = 10.0f;
+	public GameObject rock;
 
 	// Use this for initialization
 	void Start () {
