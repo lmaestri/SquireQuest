@@ -17,6 +17,8 @@ public class SquireControl : MonoBehaviour {
 
 
 	public GameObject bridge;
+	public GameObject dragonsR;
+	public GameObject dragonsL;
 
 	// Use this for initialization
 	void Start () {
@@ -47,6 +49,9 @@ public class SquireControl : MonoBehaviour {
 		if ( Input.GetKeyUp (KeyCode.LeftShift)){
 			squireCam.enabled = true;
 			knightCam.enabled = false;	
+		}
+		if ( Input.GetKeyDown("r") ){
+			rigidbody2D.position = new Vector3(22.0f,11.0f,0.0f); 	
 		}
 
 	}
@@ -83,9 +88,15 @@ public class SquireControl : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D collision){
 		string input = collision.collider.name;
-		Match match2 = Regex.Match(input,"Stone*");
-		if( match2.Success && Input.GetKeyDown("space")){
+		Match matchR = Regex.Match(input,"dragonsR");
+		if( matchR.Success && Input.GetKeyDown("space")){
 			Destroy(collision.gameObject);
+			Instantiate(dragonsL, new Vector3(rigidbody2D.position.x, (rigidbody2D.position.y + 2.0f), 0.0f), new Quaternion());
+		}
+		Match matchL = Regex.Match(input,"dragonsL");
+		if( matchL.Success && Input.GetKeyDown("space")){
+			Destroy(collision.gameObject);
+			Instantiate(dragonsR, new Vector3(rigidbody2D.position.x, (rigidbody2D.position.y + 2.0f), 0.0f), new Quaternion());
 		}
 	}
 }

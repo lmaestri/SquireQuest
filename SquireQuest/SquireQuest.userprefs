@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="assets\scripts\SquireControl.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="assets\scripts\SirKnight_KI.cs">
     <Files>
-      <File FileName="assets\scripts\SquireControl.cs" Line="47" Column="22" />
-      <File FileName="assets\scripts\SirKnightTest.cs" Line="1" Column="1" />
+      <File FileName="assets\scripts\SirKnight_KI.cs" Line="28" Column="50" />
+      <File FileName="assets\scripts\SquireControl.cs" Line="54" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
