@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="assets\scripts\SirKnight_KI.cs">
     <Files>
-      <File FileName="assets\scripts\SirKnight_KI.cs" Line="28" Column="50" />
-      <File FileName="assets\scripts\SquireControl.cs" Line="54" Column="44" />
+      <File FileName="assets\scripts\SirKnight_KI.cs" Line="40" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
