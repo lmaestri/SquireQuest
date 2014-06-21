@@ -4,32 +4,65 @@ using System.Text.RegularExpressions;
 
 public class SirKnight_KI : MonoBehaviour {
 
-	public float speed = 10.0f;
+
+	public float gravity = 20.0f;
+	public float startSpeed = 10.0f;
+	public float chargeSpeed = 80.0f;
+	public float chargeDuration = 1.0f;
+
 	public GameObject rock;
 	public GameObject wood;
 
-	bool facingRight = true;
+	private bool isCharging = false;
+	private bool facingRight = true;
+	private Vector3 moveDirection  = Vector3.zero;
+	private float speed;
+	private float chargeStartTime;
+
+	private CharacterController controller;
+
+
+
 
 	// Use this for initialization
 	void Start () {
-
+		controller = GetComponent<CharacterController>();
+		speed = startSpeed;
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		Vector2 pos = rigidbody2D.position;
-		if (pos.x < 665)
-			if (speed > rigidbody2D.velocity.x)
-				rigidbody2D.velocity = new Vector2(speed, rigidbody2D.velocity.y);
-			else
-				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y);
+	void Update () {
+
+		CheckForCharge();
+
+
+
+		if(isCharging && (Time.time - chargeStartTime) > chargeDuration){
+			StopCharge();
+			Debug.Log ("Check");
+		}
+
+		Vector2 pos = transform.position;
+
+		if (pos.x < 665){
+			/*if (speed > controller.velocity.x){
+				moveDirection = new Vector3(speed, controller.velocity.y);
+				//controller.Move(new Vector3(speed, controller.velocity.y)*Time.deltaTime);
+			}else{
+				moveDirection = new Vector3(controller.velocity.x, controller.velocity.y);
+				//controller.Move (new Vector3(controller.velocity.x, controller.velocity.y)*Time.deltaTime);
+			}*/
+
+			moveDirection = new Vector3(speed, controller.velocity.y);
+
+		}
 		//resets on death
 		if (pos.x > 282 && pos.y > (-80) && pos.y < (-65))
-			rigidbody2D.position = new Vector2 (146f, -24f);
+			transform.position = new Vector2 (146f, -24f);
 		if (pos.x < 282 && pos.y < (-233))
-			rigidbody2D.position = new Vector2 (93f, -115f);
+			transform.position = new Vector2 (93f, -115f);
 		if (pos.x > 282 && pos.y < (-233)) {
-			rigidbody2D.position = new Vector2 (298f, -205f);
+			transform.position = new Vector2 (298f, -205f);
 			rock.rigidbody2D.position = new Vector2(526.1115f, -88.02936f);
 			rock.rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
 			rock.rigidbody2D.angularVelocity = 0.0f;
@@ -39,9 +72,14 @@ public class SirKnight_KI : MonoBehaviour {
 			wood.rigidbody2D.angularVelocity = 0.0f;
 			wood.rigidbody2D.rotation = 0.0f;
 		}
+		//Apply gravity
+		if(!controller.isGrounded){
+			moveDirection.y -= gravity * Time.deltaTime;
+		}
+		controller.Move(moveDirection*Time.deltaTime);
 	}
 
-	void OnCollisionEnter2D(Collision2D collision){
+	void OnCollisionEnter(Collision collision){
 		string input = collision.collider.name;
 		Match matchR = Regex.Match(input,"dragonsR");
 		Match matchL = Regex.Match(input,"dragonsL");
@@ -51,8 +89,7 @@ public class SirKnight_KI : MonoBehaviour {
 				Flip ();
 				speed = -speed;
 			}
-		}
-		if(matchL.Success){
+		}else if(matchL.Success){
 			if (facingRight){
 				Flip ();
 				speed = -speed;
@@ -60,10 +97,33 @@ public class SirKnight_KI : MonoBehaviour {
 		}
 	}
 
+	void CheckForCharge() {
+		float distance = 100.0f;
+		Vector3 pos = transform.position;
+		Vector3 lookAt = transform.position + Vector3.forward * distance;
+		Debug.DrawLine(pos, lookAt);
+	}
+
 	void Flip() {
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void StartCharge(){
+		if(!isCharging){
+			speed = chargeSpeed;
+			chargeStartTime = Time.time;
+			isCharging = true;
+
+		}
+	}
+
+	public void StopCharge(){
+		if(isCharging){
+			speed = startSpeed;
+			isCharging = false;
+		}
 	}
 }
