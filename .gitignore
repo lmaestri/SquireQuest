@@ -14,15 +14,18 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+
 #==========================
  Unity
 #==========================
+
 $PROJDIR
 
 obj
 Temp
 *.suo
 *.user
+*.userprefs
 $PROJDIR/Library
 
 cache
