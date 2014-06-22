@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="assets\scripts\SirKnight_KI.cs">
     <Files>
-      <File FileName="assets\scripts\PlayerControl.cs" Line="85" Column="1" />
-      <File FileName="assets\scripts\SirKnight_KI.cs" Line="73" Column="7" />
+      <File FileName="assets\RockFall.cs" Line="8" Column="44" />
+      <File FileName="assets\scripts\PlayerControl.cs" Line="28" Column="13" />
+      <File FileName="assets\scripts\SirKnight_KI.cs" Line="77" Column="4" />
+      <File FileName="assets\scripts\SquireControl.cs" Line="55" Column="4" />
+      <File FileName="assets\KnightVision.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

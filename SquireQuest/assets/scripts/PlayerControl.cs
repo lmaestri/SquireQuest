@@ -24,6 +24,10 @@ public class PlayerControl : MonoBehaviour {
 
 	void Update() {
 
+		if ( Input.GetKeyDown("r") ){
+			transform.position = new Vector3(22.0f,11.0f,5.0f); 	
+		}
+
 		if(Input.GetKey(KeyCode.Space)){
 			chargeSign.SetActive(true);
 			chargeSign.collider.enabled = true;
