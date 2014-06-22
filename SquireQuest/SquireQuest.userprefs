@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="assets\scripts\SirKnight_KI.cs">
     <Files>
-      <File FileName="assets\scripts\SirKnight_KI.cs" Line="56" Column="62" />
-      <File FileName="assets\scripts\PlayerControl.cs" Line="57" Column="27" />
-      <File FileName="assets\KnightVision.cs" Line="21" Column="51" />
+      <File FileName="assets\scripts\PlayerControl.cs" Line="85" Column="1" />
+      <File FileName="assets\scripts\SirKnight_KI.cs" Line="73" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

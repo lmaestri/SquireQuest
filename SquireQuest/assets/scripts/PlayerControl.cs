@@ -61,13 +61,13 @@ public class PlayerControl : MonoBehaviour {
 
 		string input = other.name;
 		Match matchR = Regex.Match(input,"dragonsR");
-		if( matchR.Success && Input.GetKeyDown("e")){
+		if( matchR.Success && Input.GetKeyUp("e")){
 			Vector3 temp_pos = other.gameObject.transform.position;
 			Destroy(other.gameObject);
 			Instantiate(dragonsL, temp_pos, new Quaternion());
 		}
 		Match matchL = Regex.Match(input,"dragonsL");
-		if( matchL.Success && Input.GetKeyDown("e")){
+		if( matchL.Success && Input.GetKeyUp("e")){
 			Vector3 temp_pos = other.gameObject.transform.position;
 			Destroy(other.gameObject);
 			Instantiate(dragonsR, temp_pos, new Quaternion());

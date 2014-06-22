@@ -58,19 +58,19 @@ public class SirKnight_KI : MonoBehaviour {
 		}
 		//resets on death
 		if (pos.x > 282 && pos.y > (-80) && pos.y < (-65))
-			transform.position = new Vector2 (146f, -24f);
+			transform.position = new Vector3 (146f, -24f, 5.0f);
 		if (pos.x < 282 && pos.y < (-233))
-			transform.position = new Vector2 (93f, -115f);
+			transform.position = new Vector3 (93f, -115f, 5.0f);
 		if (pos.x > 282 && pos.y < (-233)) {
-			transform.position = new Vector2 (298f, -205f);
-			rock.rigidbody2D.position = new Vector2(526.1115f, -88.02936f);
-			rock.rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
-			rock.rigidbody2D.angularVelocity = 0.0f;
-			rock.rigidbody2D.rotation = 0.0f;
-			wood.rigidbody2D.position = new Vector2(528.4794f, -210.829f);
-			wood.rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
-			wood.rigidbody2D.angularVelocity = 0.0f;
-			wood.rigidbody2D.rotation = 0.0f;
+			transform.position = new Vector3 (298f, -205f, 5.0f);
+			rock.rigidbody.position = new Vector3(526.1115f, -88.02936f, 5.0f);
+			rock.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+			//rock.rigidbody.angularVelocity = 0.0f;
+			//rock.rigidbody.rotation = 0.0f;
+			wood.rigidbody.position = new Vector3(528.4794f, -210.829f, 5.0f);
+			wood.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+			//wood.rigidbody.angularVelocity = 0.0f;
+			//wood.rigidbody.rotation = 0.0f;
 		}
 		//Apply gravity
 		if(!controller.isGrounded){
