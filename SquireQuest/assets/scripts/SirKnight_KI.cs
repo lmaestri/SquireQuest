@@ -79,7 +79,7 @@ public class SirKnight_KI : MonoBehaviour {
 		controller.Move(moveDirection*Time.deltaTime);
 	}
 
-	void OnCollisionEnter(Collision collision){
+	void OnTriggerEnter(Collider collision){
 		string input = collision.collider.name;
 		Match matchR = Regex.Match(input,"dragonsR");
 		Match matchL = Regex.Match(input,"dragonsL");

@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="assets\KnightVision.cs" />
+     <Compile Include="assets\RockFall.cs" />
+     <Compile Include="assets\collider.cs" />
      <Compile Include="assets\scripts\KnightIcon.cs" />
      <Compile Include="assets\scripts\PlayerControl.cs" />
      <Compile Include="assets\scripts\SirKnight_KI.cs" />

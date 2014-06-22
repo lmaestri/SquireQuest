@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 public class PlayerControl : MonoBehaviour {
 
 	public float speed = 6.0f;
 	public float jumpSpeed = 8.0f;
 	public float gravity = 20.0f;
+
+	public GameObject dragonsR;
+	public GameObject dragonsL;
 
 	public GameObject chargeSign;
 
@@ -32,7 +36,7 @@ public class PlayerControl : MonoBehaviour {
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f);
 			moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection *= speed;
-			if (Input.GetAxis("Vertical") != 0.0f)
+			if (Input.GetAxis("Vertical") > 0.0f)
 				moveDirection.y = jumpSpeed;
 			
 		}else{
@@ -53,7 +57,28 @@ public class PlayerControl : MonoBehaviour {
 		transform.localScale = temp_scale;
 	}
 
-	void OnTriggerEnter(Collider other) {
-		//Do something with sign
+	void OnTriggerStay(Collider other) {
+
+		string input = other.name;
+		Match matchR = Regex.Match(input,"dragonsR");
+		if( matchR.Success && Input.GetKeyDown("e")){
+			Vector3 temp_pos = other.gameObject.transform.position;
+			Destroy(other.gameObject);
+			Instantiate(dragonsL, temp_pos, new Quaternion());
+		}
+		Match matchL = Regex.Match(input,"dragonsL");
+		if( matchL.Success && Input.GetKeyDown("e")){
+			Vector3 temp_pos = other.gameObject.transform.position;
+			Destroy(other.gameObject);
+			Instantiate(dragonsR, temp_pos, new Quaternion());
+		}
+	}
+
+	void OnCollisionEnter(Collision col){
+		//Debug.Log(col.collider.name);
+	}
+
+	void OnTriggerEnter(Collider other){
+		//sDebug.Log(other.name);
 	}
 }
