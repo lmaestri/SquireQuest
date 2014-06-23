@@ -11,6 +11,9 @@ public class PlayerControl : MonoBehaviour {
 	public GameObject dragonsR;
 	public GameObject dragonsL;
 
+	public Camera squireCam;
+	public Camera knightCam;
+
 	public GameObject chargeSign;
 
 	private Vector3 moveDirection = Vector3.zero;
@@ -34,6 +37,15 @@ public class PlayerControl : MonoBehaviour {
 		}else{
 			chargeSign.SetActive(false);
 			chargeSign.collider.enabled = false;
+		}
+
+		if( Input.GetKeyDown (KeyCode.LeftShift)){
+			squireCam.enabled = false;
+			knightCam.enabled = true;
+		}
+		if ( Input.GetKeyUp (KeyCode.LeftShift)){
+			squireCam.enabled = true;
+			knightCam.enabled = false;	
 		}
 
 		if (controller.isGrounded) {
